@@ -31,6 +31,7 @@
     "eslint",
     "prettier",
     "stylelint",
-    "tslint"
+    "@typescript-eslint/eslint-plugin",
+    "@typescript-eslint/parser"
   ]
 }
