@@ -1,0 +1,21 @@
+# SSH Client Configuration Example
+# Copy to ~/.ssh/config and customize
+# WARNING: Never commit private keys!
+
+# Default settings for all hosts
+Host *
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    Compression yes
+
+# Example host configuration
+# Host myserver
+#     HostName server.example.com
+#     User username
+#     Port 22
+#     IdentityFile ~/.ssh/id_rsa
+
+# GitHub configuration
+Host github.com
+    User git
+    PreferredAuthentications publickey

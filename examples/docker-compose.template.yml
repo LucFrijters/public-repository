@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # Example web application service
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+    restart: unless-stopped
+
+  # Example database service
+  # db:
+  #   image: postgres:14
+  #   environment:
+  #     POSTGRES_DB: mydb
+  #     POSTGRES_USER: user
+  #     # Use environment variables or secrets for passwords!
+  #   volumes:
+  #     - db_data:/var/lib/postgresql/data
+  #   restart: unless-stopped
+
+# volumes:
+#   db_data:

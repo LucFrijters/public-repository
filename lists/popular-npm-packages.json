@@ -1,0 +1,36 @@
+{
+  "testing": [
+    "jest",
+    "mocha",
+    "chai",
+    "cypress",
+    "playwright"
+  ],
+  "build_tools": [
+    "webpack",
+    "vite",
+    "rollup",
+    "esbuild",
+    "parcel"
+  ],
+  "frameworks": [
+    "express",
+    "react",
+    "vue",
+    "angular",
+    "next"
+  ],
+  "utilities": [
+    "lodash",
+    "axios",
+    "dotenv",
+    "moment",
+    "date-fns"
+  ],
+  "linting": [
+    "eslint",
+    "prettier",
+    "stylelint",
+    "tslint"
+  ]
+}
