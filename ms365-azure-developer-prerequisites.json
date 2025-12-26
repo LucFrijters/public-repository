@@ -83,8 +83,8 @@
           "description": "Tools for developing and testing Azure Functions locally",
           "required": false,
           "downloadUrl": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local",
-          "installMethod": "npm install -g azure-functions-core-tools@4",
-          "notes": "Required for serverless development"
+          "installMethod": "npm install -g azure-functions-core-tools@4 --unsafe-perm true",
+          "notes": "Required for serverless development; v4 is current LTS version"
         }
       ]
     },
@@ -189,10 +189,10 @@
         },
         {
           "name": "ExchangeOnlineManagement",
-          "description": "Exchange Online and Security & Compliance management",
+          "description": "Exchange Online management module with Security & Compliance cmdlets",
           "required": true,
           "installMethod": "Install-Module -Name ExchangeOnlineManagement -Force",
-          "notes": "For Exchange Online administration and compliance (Connect-IPPSSession)"
+          "notes": "For Exchange Online administration; includes Connect-IPPSSession for Security & Compliance Center"
         },
         {
           "name": "MicrosoftTeams",
