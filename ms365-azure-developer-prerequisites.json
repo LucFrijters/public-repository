@@ -1,0 +1,626 @@
+{
+  "metadata": {
+    "title": "MS365/Azure Developer Prerequisites for Windows",
+    "description": "Comprehensive list of required tools, CLIs, SDKs, and PowerShell modules for Microsoft 365 and Azure development on Windows",
+    "lastUpdated": "2025-12-26",
+    "platform": "Windows"
+  },
+  "prerequisites": [
+    {
+      "category": "Core Development Tools",
+      "items": [
+        {
+          "name": "PowerShell 7",
+          "description": "Cross-platform automation and configuration tool/framework",
+          "downloadUrl": "https://github.com/PowerShell/PowerShell/releases",
+          "installMethod": "winget install Microsoft.PowerShell",
+          "installArgs": "/quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 ADD_PATH=1",
+          "notes": "Latest stable version recommended"
+        },
+        {
+          "name": "Git",
+          "description": "Distributed version control system",
+          "required": true,
+          "downloadUrl": "https://git-scm.com/download/win",
+          "installMethod": "winget install Git.Git",
+          "installArgs": null,
+          "notes": "Include Git Credential Manager"
+        },
+        {
+          "name": "7-Zip",
+          "description": "File archiver with high compression ratio",
+          "required": true,
+          "downloadUrl": "https://www.7-zip.org/download.html",
+          "installMethod": "winget install 7zip.7zip",
+          "installArgs": null,
+          "notes": "Useful for handling various archive formats"
+        },
+        {
+          "name": "Visual Studio Code",
+          "description": "Lightweight code editor with extensive extension support",
+          "required": true,
+          "downloadUrl": "https://code.visualstudio.com/",
+          "installMethod": "winget install Microsoft.VisualStudioCode",
+          "installArgs": "/VERYSILENT /NORESTART /MERGETASKS=!runcode,addcontextmenufiles,addcontextmenufolders,addtopath",
+          "notes": "Install Azure, PowerShell, and Bicep extensions"
+        },
+        {
+          "name": "Windows Terminal",
+          "description": "Modern terminal application for command-line tools",
+          "downloadUrl": "https://aka.ms/terminal",
+          "installMethod": "winget install Microsoft.WindowsTerminal",
+          "installArgs": null,
+          "notes": "Enhanced terminal experience"
+        }
+      ]
+    },
+    {
+      "category": "Azure CLI Tools",
+      "items": [
+        {
+          "name": "Azure CLI (az)",
+          "description": "Command-line interface for managing Azure resources",
+          "required": true,
+          "downloadUrl": "https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows",
+          "installMethod": "winget install Microsoft.AzureCLI",
+          "installArgs": null,
+          "notes": "Core Azure management tool"
+        },
+        {
+          "name": "Azure Developer CLI (azd)",
+          "description": "CLI tool for Azure Developer scenarios",
+          "required": true,
+          "downloadUrl": "https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd",
+          "installMethod": "winget install Microsoft.Azd",
+          "installArgs": null,
+          "notes": "Streamlines Azure app development"
+        },
+        {
+          "name": "Bicep CLI",
+          "description": "Domain-specific language for deploying Azure resources",
+          "required": true,
+          "downloadUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/install",
+          "installMethod": "winget install Microsoft.Bicep",
+          "installArgs": null,
+          "notes": "Infrastructure as Code tool (machine-scope install recommended for Intune/System deployment)"
+        },
+        {
+          "name": "Azure Functions Core Tools",
+          "description": "Tools for developing and testing Azure Functions locally",
+          "required": true,
+          "downloadUrl": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local",
+          "installMethod": "winget install Microsoft.AzureFunctionsCoreTools",
+          "installArgs": null,
+          "notes": "Optional. On Windows you can install via WinGet. Alternative: npm install -g azure-functions-core-tools@4"
+        }
+      ]
+    },
+    {
+      "category": "PowerShell Modules - Azure",
+      "items": [
+        {
+          "name": "Az",
+          "description": "Azure PowerShell module for managing Azure resources",
+          "required": true,
+          "installMethod": "Install-Module -Name Az -Repository PSGallery -Force -AllowClobber",
+          "notes": "Main Azure PowerShell module"
+        },
+        {
+          "name": "Az.Accounts",
+          "description": "Azure account management",
+          "required": true,
+          "installMethod": "Install-Module -Name Az.Accounts -Force",
+          "notes": "Included in Az module"
+        },
+        {
+          "name": "Az.Resources",
+          "description": "Azure Resource Manager resources",
+          "required": true,
+          "installMethod": "Install-Module -Name Az.Resources -Force",
+          "notes": "Included in Az module"
+        },
+        {
+          "name": "Az.Storage",
+          "description": "Azure Storage management",
+          "required": true,
+          "installMethod": "Install-Module -Name Az.Storage -Force",
+          "notes": "Included in Az module"
+        },
+        {
+          "name": "Az.KeyVault",
+          "description": "Azure Key Vault management",
+          "required": true,
+          "installMethod": "Install-Module -Name Az.KeyVault -Force",
+          "notes": "Included in Az module"
+        },
+        {
+          "name": "Az.Functions",
+          "description": "Azure Functions management",
+          "required": true,
+          "installMethod": "Install-Module -Name Az.Functions -Force",
+          "notes": "For serverless development"
+        },
+        {
+          "name": "Az.Websites",
+          "description": "Azure App Service management",
+          "required": true,
+          "installMethod": "Install-Module -Name Az.Websites -Force",
+          "notes": "For web app development"
+        },
+        {
+          "name": "Az.Sql",
+          "description": "Azure SQL Database management",
+          "required": true,
+          "installMethod": "Install-Module -Name Az.Sql -Force",
+          "notes": "For database development"
+        },
+        {
+          "name": "Az.CosmosDB",
+          "description": "Azure Cosmos DB management",
+          "required": true,
+          "installMethod": "Install-Module -Name Az.CosmosDB -Force",
+          "notes": "For NoSQL database development"
+        }
+      ]
+    },
+    {
+      "category": "PowerShell Modules - Microsoft Entra ID",
+      "items": [
+        {
+          "name": "Microsoft.Entra",
+          "description": "Microsoft Entra PowerShell (v1.0 / GA) for identity and directory management",
+          "required": true,
+          "downloadUrl": "https://learn.microsoft.com/en-us/powershell/entra-powershell/installation?view=entra-powershell&tabs=powershell%2Cv1&pivots=windows",
+          "installMethod": "Install-Module -Name Microsoft.Entra -Repository PSGallery -Force -AllowClobber",
+          "notes": "Modern replacement baseline for AzureAD/MSOnline scripts; use Connect-Entra to sign in"
+        },
+        {
+          "name": "Microsoft.Entra.Authentication",
+          "description": "Authentication cmdlets for Microsoft Entra PowerShell (includes Connect-Entra)",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Entra.Authentication -Repository PSGallery -Force -AllowClobber",
+          "notes": "Included when installing Microsoft.Entra; listed here for clarity"
+        },
+        {
+          "name": "Microsoft.Entra.Users",
+          "description": "User management cmdlets",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Entra.Users -Repository PSGallery -Force -AllowClobber",
+          "notes": "Included when installing Microsoft.Entra; useful for identity automation"
+        },
+        {
+          "name": "Microsoft.Entra.Groups",
+          "description": "Group management cmdlets",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Entra.Groups -Repository PSGallery -Force -AllowClobber",
+          "notes": "Included when installing Microsoft.Entra; useful for access management"
+        },
+        {
+          "name": "Microsoft.Entra.Applications",
+          "description": "App registration and service principal management cmdlets",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Entra.Applications -Repository PSGallery -Force -AllowClobber",
+          "notes": "Install if you manage app registrations, service principals, and secrets via PowerShell"
+        },
+        {
+          "name": "Microsoft.Entra.DirectoryManagement",
+          "description": "Directory management cmdlets",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Entra.DirectoryManagement -Repository PSGallery -Force -AllowClobber",
+          "notes": "Install if you manage directory settings and directory roles"
+        },
+        {
+          "name": "Microsoft.Entra.SignIns",
+          "description": "Sign-in and audit-related cmdlets",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Entra.SignIns -Repository PSGallery -Force -AllowClobber",
+          "notes": "Useful for sign-in investigation and reporting"
+        },
+        {
+          "name": "Microsoft.Entra.Reports",
+          "description": "Reports and insights cmdlets",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Entra.Reports -Repository PSGallery -Force -AllowClobber",
+          "notes": "Useful for reporting and operational insights"
+        }
+      ]
+    },
+    {
+      "category": "PowerShell Modules - Microsoft 365",
+      "items": [
+        {
+          "name": "Microsoft.Graph",
+          "description": "Microsoft Graph PowerShell SDK",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Graph -Force",
+          "notes": "Primary module for MS365 automation"
+        },
+        {
+          "name": "Microsoft.Graph.Intune",
+          "description": "Intune management cmdlets via Microsoft Graph",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Graph.Intune -Force",
+          "notes": "Useful for Intune automation; backed by Microsoft Graph"
+        },
+        {
+          "name": "Microsoft.Graph.DeviceManagement",
+          "description": "Device management (Intune/Endpoint Manager) cmdlets via Microsoft Graph",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Graph.DeviceManagement -Force",
+          "notes": "Useful for device and policy automation; backed by Microsoft Graph"
+        },
+        {
+          "name": "Microsoft.Graph.Authentication",
+          "description": "Authentication for Microsoft Graph",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Graph.Authentication -Force",
+          "notes": "Included in Microsoft.Graph"
+        },
+        {
+          "name": "Microsoft.Graph.Users",
+          "description": "User management via Graph",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Graph.Users -Force",
+          "notes": "Included in Microsoft.Graph"
+        },
+        {
+          "name": "Microsoft.Graph.Groups",
+          "description": "Group management via Graph",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Graph.Groups -Force",
+          "notes": "Included in Microsoft.Graph"
+        },
+        {
+          "name": "ExchangeOnlineManagement",
+          "description": "Exchange Online management module with Security & Compliance cmdlets",
+          "required": true,
+          "installMethod": "Install-Module -Name ExchangeOnlineManagement -Force",
+          "notes": "For Exchange Online administration; includes Connect-IPPSSession for Security & Compliance Center"
+        },
+        {
+          "name": "MicrosoftTeams",
+          "description": "Microsoft Teams management module",
+          "required": true,
+          "installMethod": "Install-Module -Name MicrosoftTeams -Force",
+          "notes": "For Teams administration"
+        },
+        {
+          "name": "Microsoft365DSC",
+          "description": "Microsoft 365 Desired State Configuration",
+          "required": false,
+          "installMethod": "Install-Module -Name Microsoft365DSC -Force",
+          "notes": "Optional but useful for configuration-as-code (M365/Intune baselining)"
+        },
+        {
+          "name": "Microsoft.Online.SharePoint.PowerShell",
+          "description": "SharePoint Online management module",
+          "required": true,
+          "installMethod": "Install-Module -Name Microsoft.Online.SharePoint.PowerShell -Force",
+          "notes": "For SharePoint Online administration"
+        },
+        {
+          "name": "PnP.PowerShell",
+          "description": "SharePoint Patterns and Practices PowerShell",
+          "required": true,
+          "installMethod": "Install-Module -Name PnP.PowerShell -Force",
+          "notes": "Enhanced SharePoint automation"
+        },
+        {
+          "name": "Microsoft.PowerApps.Administration.PowerShell",
+          "description": "Power Platform administration",
+          "required": false,
+          "installMethod": "Install-Module -Name Microsoft.PowerApps.Administration.PowerShell -Force",
+          "notes": "For Power Platform development"
+        },
+        {
+          "name": "Microsoft.PowerApps.PowerShell",
+          "description": "Power Apps management",
+          "required": false,
+          "installMethod": "Install-Module -Name Microsoft.PowerApps.PowerShell -Force",
+          "notes": "For Power Apps development"
+        },
+        {
+          "name": "MSOnline",
+          "description": "MSOnline (legacy Microsoft Online Services) module",
+          "required": false,
+          "installMethod": "Install-Module -Name MSOnline -Force",
+          "notes": "Legacy only. Prefer Microsoft.Graph and Microsoft.Entra. For legacy script execution guidance, see https://learn.microsoft.com/en-us/powershell/entra-powershell/migration-guide?view=entra-powershell"
+        },
+        {
+          "name": "AzureAD",
+          "description": "AzureAD (legacy Azure AD PowerShell) module",
+          "required": false,
+          "installMethod": "Install-Module -Name AzureAD -Force",
+          "notes": "Legacy only. Prefer Microsoft.Entra. If you must run AzureAD scripts, use Microsoft.Entra compatibility mode (Connect-Entra + Enable-EntraAzureADAlias) and validate with Test-EntraScript: https://learn.microsoft.com/en-us/powershell/entra-powershell/migration-guide?view=entra-powershell"
+        }
+      ]
+    },
+    {
+      "category": "PowerShell Modules - Security & Compliance",
+      "items": [
+        {
+          "name": "Microsoft.Graph.Security",
+          "description": "Security operations via Graph",
+          "required": false,
+          "installMethod": "Install-Module -Name Microsoft.Graph.Security -Force",
+          "notes": "For security automation"
+        },
+        {
+          "name": "Microsoft.Graph.Compliance",
+          "description": "Compliance operations via Graph",
+          "required": false,
+          "installMethod": "Install-Module -Name Microsoft.Graph.Compliance -Force",
+          "notes": "For compliance automation"
+        }
+      ]
+    },
+    {
+      "category": "SDKs and Frameworks",
+      "items": [
+        {
+          "name": ".NET SDK",
+          "description": "Software development kit for .NET applications",
+          "downloadUrl": "https://dotnet.microsoft.com/download",
+          "installMethod": "winget install Microsoft.DotNet.SDK.8",
+          "installArgs": null,
+          "notes": "Install latest LTS version (currently .NET 8)"
+        },
+        {
+          "name": "Node.js",
+          "description": "JavaScript runtime for server-side development",
+          "required": false,
+          "downloadUrl": "https://nodejs.org/",
+          "installMethod": "winget install OpenJS.NodeJS.LTS",
+          "installArgs": null,
+          "notes": "LTS version recommended, includes npm"
+        },
+        {
+          "name": "Python",
+          "description": "Python programming language",
+          "required": true,
+          "downloadUrl": "https://www.python.org/downloads/",
+          "installMethod": "winget install Python.Python.3.12",
+          "installArgs": null,
+          "notes": "Useful for Azure Functions and scripts"
+        },
+        {
+          "name": "Azure SDK for .NET",
+          "description": "Azure libraries for .NET",
+          "required": true,
+          "installMethod": "NuGet packages in Visual Studio/VS Code",
+          "notes": "Install via NuGet: Azure.Identity, Azure.Storage.Blobs, etc."
+        },
+        {
+          "name": "Microsoft Authentication Library (MSAL)",
+          "description": "Authentication library for Microsoft identity platform",
+          "required": true,
+          "installMethod": "NuGet: Microsoft.Identity.Client",
+          "notes": "For app authentication"
+        }
+      ]
+    },
+    {
+      "category": "Container and Orchestration Tools",
+      "items": [
+        {
+          "name": "Docker Desktop",
+          "description": "Containerization platform",
+          "required": false,
+          "downloadUrl": "https://www.docker.com/products/docker-desktop/",
+          "installMethod": "winget install Docker.DockerDesktop",
+          "installArgs": null,
+          "notes": "For container development"
+        },
+        {
+          "name": "kubectl",
+          "description": "Kubernetes command-line tool",
+          "required": false,
+          "downloadUrl": "https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/",
+          "installMethod": "az aks install-cli",
+          "notes": "For AKS development"
+        },
+        {
+          "name": "Helm",
+          "description": "Package manager for Kubernetes",
+          "required": false,
+          "downloadUrl": "https://helm.sh/docs/intro/install/",
+          "installMethod": "winget install Helm.Helm",
+          "installArgs": null,
+          "notes": "For Kubernetes deployments"
+        }
+      ]
+    },
+    {
+      "category": "Database Tools",
+      "items": [
+        {
+          "name": "Azure Data Studio",
+          "description": "Cross-platform database tool",
+          "required": false,
+          "downloadUrl": "https://learn.microsoft.com/en-us/sql/azure-data-studio/download",
+          "installMethod": "winget install Microsoft.AzureDataStudio",
+          "installArgs": null,
+          "notes": "For SQL and Azure database work"
+        },
+        {
+          "name": "SQL Server Management Studio (SSMS)",
+          "description": "SQL Server management tool",
+          "required": false,
+          "downloadUrl": "https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms",
+          "installMethod": "Download from Microsoft",
+          "notes": "Windows-only SQL tool"
+        },
+        {
+          "name": "Azure Storage Explorer",
+          "description": "Manage Azure Storage accounts",
+          "required": true,
+          "downloadUrl": "https://azure.microsoft.com/en-us/products/storage/storage-explorer/",
+          "installMethod": "winget install Microsoft.AzureStorageExplorer",
+          "installArgs": null,
+          "notes": "GUI for Azure Storage"
+        }
+      ]
+    },
+    {
+      "category": "IDE and Code Editors",
+      "items": [
+        {
+          "name": "Visual Studio 2022",
+          "description": "Full-featured IDE for .NET development",
+          "required": false,
+          "downloadUrl": "https://visualstudio.microsoft.com/",
+          "installMethod": "winget install Microsoft.VisualStudio.2022.Community",
+          "installArgs": null,
+          "notes": "Community, Professional, or Enterprise edition"
+        },
+        {
+          "name": "JetBrains Rider",
+          "description": ".NET IDE by JetBrains",
+          "required": false,
+          "downloadUrl": "https://www.jetbrains.com/rider/",
+          "installMethod": "winget install JetBrains.Rider",
+          "installArgs": null,
+          "notes": "Alternative to Visual Studio"
+        }
+      ]
+    },
+    {
+      "category": "Additional Utilities",
+      "items": [
+        {
+          "name": "PowerShell Gallery Trust",
+          "description": "Trust PowerShell Gallery as repository",
+          "required": true,
+          "installMethod": "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted",
+          "notes": "Recommended for module installation"
+        },
+        {
+          "name": "NuGet",
+          "description": "Package manager for .NET",
+          "required": true,
+          "downloadUrl": "https://www.nuget.org/downloads",
+          "installMethod": "Included with Visual Studio/.NET SDK",
+          "notes": "CLI available separately"
+        },
+        {
+          "name": "Postman",
+          "description": "API development and testing tool",
+          "required": false,
+          "downloadUrl": "https://www.postman.com/downloads/",
+          "installMethod": "winget install Postman.Postman",
+          "installArgs": null,
+          "notes": "For API testing"
+        },
+        {
+          "name": "Fiddler",
+          "description": "Web debugging proxy",
+          "required": false,
+          "downloadUrl": "https://www.telerik.com/fiddler",
+          "installMethod": "winget install Telerik.Fiddler.Everywhere",
+          "installArgs": null,
+          "notes": "For network debugging"
+        },
+        {
+          "name": "WinGet",
+          "description": "Windows Package Manager",
+          "required": true,
+          "downloadUrl": "https://aka.ms/getwinget",
+          "installMethod": "Included in Windows 11, install App Installer from Store",
+          "notes": "Essential for installing other tools"
+        },
+        {
+          "name": "GitHub CLI",
+          "description": "GitHub command-line tool",
+          "required": false,
+          "downloadUrl": "https://cli.github.com/",
+          "installMethod": "winget install GitHub.cli",
+          "installArgs": null,
+          "notes": "For GitHub operations from CLI"
+        },
+        {
+          "name": "Terraform",
+          "description": "Infrastructure as Code tool",
+          "required": false,
+          "downloadUrl": "https://www.terraform.io/downloads",
+          "installMethod": "winget install Hashicorp.Terraform",
+          "installArgs": null,
+          "notes": "Alternative to Bicep"
+        }
+      ]
+    },
+    {
+      "category": "VS Code Extensions (Recommended)",
+      "items": [
+        {
+          "name": "Azure Account",
+          "description": "Azure subscription and account management",
+          "required": true,
+          "installMethod": "ext install ms-vscode.azure-account",
+          "notes": "Core Azure extension"
+        },
+        {
+          "name": "Azure Resources",
+          "description": "View and manage Azure resources",
+          "required": true,
+          "installMethod": "ext install ms-azuretools.vscode-azureresourcegroups",
+          "notes": "Azure resource explorer"
+        },
+        {
+          "name": "Azure Functions",
+          "description": "Azure Functions development",
+          "required": false,
+          "installMethod": "ext install ms-azuretools.vscode-azurefunctions",
+          "notes": "For serverless development"
+        },
+        {
+          "name": "Bicep",
+          "description": "Bicep language support",
+          "required": true,
+          "installMethod": "ext install ms-azuretools.vscode-bicep",
+          "notes": "IntelliSense for Bicep"
+        },
+        {
+          "name": "PowerShell",
+          "description": "PowerShell language support",
+          "required": true,
+          "installMethod": "ext install ms-vscode.PowerShell",
+          "notes": "Essential for PS development"
+        },
+        {
+          "name": "Azure CLI Tools",
+          "description": "Azure CLI script support",
+          "required": false,
+          "installMethod": "ext install ms-vscode.azurecli",
+          "notes": "IntelliSense for az commands"
+        }
+      ]
+    }
+  ],
+  "installation_notes": {
+    "prerequisites": [
+      "Administrative privileges on Windows device",
+      "Active Azure subscription",
+      "Active Microsoft 365 tenant (for M365 development)",
+      "Sufficient disk space (minimum 20GB recommended)"
+    ],
+    "installation_order": [
+      "1. Install WinGet (if not present)",
+      "2. Install PowerShell 7",
+      "3. Install Git",
+      "4. Install Azure CLI",
+      "5. Install .NET SDK and Node.js",
+      "6. Install Visual Studio Code",
+      "7. Install PowerShell modules",
+      "8. Install remaining tools as needed"
+    ],
+    "post_installation": [
+      "Configure Git (user.name, user.email)",
+      "Sign in to Azure CLI: az login",
+      "Sign in to Azure PowerShell: Connect-AzAccount",
+      "Sign in to Microsoft Graph: Connect-MgGraph",
+      "Sign in to Microsoft Entra PowerShell: Connect-Entra",
+      "Configure PowerShell execution policy: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser",
+      "Update all tools regularly for security and features"
+    ]
+  }
+}
