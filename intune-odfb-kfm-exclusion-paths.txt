@@ -23,7 +23,7 @@
 %USERPROFILE%\Documents\Visual Studio 2022
 %USERPROFILE%\Documents\Visual Studio 2025
 %USERPROFILE%\Documents\Visual Studio Code
-%USERPROFILE%\Documents\. vscode
+%USERPROFILE%\Documents\.vscode
 %USERPROFILE%\Documents\.cursor
 
 # SQL Server
