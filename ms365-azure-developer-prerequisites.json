@@ -28,7 +28,7 @@
         {
           "name": "7-Zip",
           "description": "File archiver with high compression ratio",
-          "required": true,
+          "required": false,
           "downloadUrl": "https://www.7-zip.org/download.html",
           "installMethod": "winget install 7zip.7zip",
           "notes": "Useful for handling various archive formats"
@@ -189,10 +189,10 @@
         },
         {
           "name": "ExchangeOnlineManagement",
-          "description": "Exchange Online management module",
+          "description": "Exchange Online and Security & Compliance management",
           "required": true,
           "installMethod": "Install-Module -Name ExchangeOnlineManagement -Force",
-          "notes": "For Exchange Online administration"
+          "notes": "For Exchange Online administration and compliance (Connect-IPPSSession)"
         },
         {
           "name": "MicrosoftTeams",
@@ -261,13 +261,6 @@
           "required": false,
           "installMethod": "Install-Module -Name Microsoft.Graph.Compliance -Force",
           "notes": "For compliance automation"
-        },
-        {
-          "name": "ExchangeOnlineManagement",
-          "description": "Includes Security & Compliance cmdlets",
-          "required": false,
-          "installMethod": "Install-Module -Name ExchangeOnlineManagement -Force",
-          "notes": "Connect-IPPSSession for compliance"
         }
       ]
     },
@@ -396,13 +389,6 @@
     {
       "category": "Additional Utilities",
       "items": [
-        {
-          "name": "Azure CLI Bicep Extension",
-          "description": "Bicep language support for Azure CLI",
-          "required": true,
-          "installMethod": "az bicep install",
-          "notes": "Auto-installed with Azure CLI"
-        },
         {
           "name": "PowerShell Gallery Trust",
           "description": "Trust PowerShell Gallery as repository",
