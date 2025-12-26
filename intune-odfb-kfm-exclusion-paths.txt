@@ -1,24 +1,21 @@
 # LPTF - OneDrive KFM Exclusions And Tuning
-# Remote Exclusion List
+# Remote Exclusion List - KFM Folders Only (Desktop, Documents, Pictures)
 # Last Updated: 2025-12-26
 # Format: One path per line, use environment variables like %USERPROFILE%
 # Lines starting with # are comments and will be ignored
 
+# ============================================================
+# DOCUMENTS FOLDER EXCLUSIONS
+# ============================================================
+
 # Microsoft 365 & Office
 %USERPROFILE%\Documents\Microsoft Teams Chat Files
-%USERPROFILE%\Downloads\Microsoft Teams
-%USERPROFILE%\AppData\Local\Microsoft\Teams
-%USERPROFILE%\AppData\Roaming\Microsoft\Teams
-%USERPROFILE%\.teams
 %USERPROFILE%\Documents\OneNote Notebooks
-%USERPROFILE%\AppData\Local\Microsoft\OneNote
-%USERPROFILE%\AppData\Local\Microsoft\Outlook
 %USERPROFILE%\Documents\Outlook Files
 
 # PowerShell
 %USERPROFILE%\Documents\PowerShell
 %USERPROFILE%\Documents\WindowsPowerShell
-%USERPROFILE%\.powershell
 
 # Visual Studio & IDEs
 %USERPROFILE%\Documents\Visual Studio 2017
@@ -26,266 +23,46 @@
 %USERPROFILE%\Documents\Visual Studio 2022
 %USERPROFILE%\Documents\Visual Studio 2025
 %USERPROFILE%\Documents\Visual Studio Code
-%USERPROFILE%\. vs
-%USERPROFILE%\. vscode
-%USERPROFILE%\.vscode-insiders
-%USERPROFILE%\Documents\.vscode
-%USERPROFILE%\. cursor
+%USERPROFILE%\Documents\. vscode
 %USERPROFILE%\Documents\.cursor
-%USERPROFILE%\. idea
-%USERPROFILE%\.rider
-%USERPROFILE%\.webstorm
-%USERPROFILE%\.phpstorm
-%USERPROFILE%\. pycharm
-%USERPROFILE%\.goland
-%USERPROFILE%\.fleet
-%USERPROFILE%\AppData\Roaming\Code
-%USERPROFILE%\source\repos\*\.vs
-%USERPROFILE%\source\repos\*\bin
-%USERPROFILE%\source\repos\*\obj
 
-# . NET & NuGet
-%USERPROFILE%\. nuget
-%USERPROFILE%\.dotnet
-%USERPROFILE%\.templateengine
-%USERPROFILE%\.dotnet-tools
-%USERPROFILE%\.aspnet
-
-# Azure Tools & CLI
-%USERPROFILE%\. azure
-%USERPROFILE%\.Azure
-%USERPROFILE%\. azuredevops
-%USERPROFILE%\.azuresmps
-%USERPROFILE%\. azd
-%USERPROFILE%\.azure-cli
-%USERPROFILE%\.azure-functions
-%USERPROFILE%\.azurefunctions
-%USERPROFILE%\.bicep
-%USERPROFILE%\.terraform.d
-%USERPROFILE%\.terraformrc
-%USERPROFILE%\. pulumi
-
-# Microsoft Graph & M365 SDKs
-%USERPROFILE%\. msgraph
-%USERPROFILE%\.graph
-%USERPROFILE%\.microsoft-graph
-%USERPROFILE%\.m365
-%USERPROFILE%\.office365
-%USERPROFILE%\.msal
-
-# SQL Server & Databases
+# SQL Server
 %USERPROFILE%\Documents\SQL Server Management Studio
-%USERPROFILE%\. sqlworkbench
-%USERPROFILE%\.azure-data-studio
-%USERPROFILE%\. dbeaver
-%USERPROFILE%\.datagrip
-%USERPROFILE%\.mysql
-%USERPROFILE%\.postgresql
-%USERPROFILE%\. mongodb
-%USERPROFILE%\.cosmosdb
 
 # Git & Source Control
 %USERPROFILE%\Documents\GitHub
 %USERPROFILE%\Documents\GitLab
 %USERPROFILE%\Documents\Bitbucket
-%USERPROFILE%\. git
-%USERPROFILE%\.gitconfig
-%USERPROFILE%\. gitignore_global
-%USERPROFILE%\.github
-%USERPROFILE%\. gitkraken
-%USERPROFILE%\.sourcetree
-%USERPROFILE%\Desktop\.git
 
-# SSH & Remote Access
-%USERPROFILE%\. ssh
-%USERPROFILE%\.putty
-%USERPROFILE%\.rdp
-%USERPROFILE%\.mRemoteNG
-%USERPROFILE%\.rdcman
+# Remote Access
 %USERPROFILE%\Documents\Remote Desktop Files
-%USERPROFILE%\. winscp
-%USERPROFILE%\.filezilla
-%USERPROFILE%\. cyberduck
-%USERPROFILE%\. remmina
-
-# Networking & Security
-%USERPROFILE%\. wireshark
-%USERPROFILE%\.nmap
-%USERPROFILE%\.postman
-%USERPROFILE%\.insomnia
-%USERPROFILE%\.fiddler
 %USERPROFILE%\Documents\Fiddler2
-%USERPROFILE%\. burpsuite
-%USERPROFILE%\.vpn
-%USERPROFILE%\. openvpn
-%USERPROFILE%\.wireguard
-%USERPROFILE%\.cisco
-%USERPROFILE%\.fortinet
 
-# Windows Terminal
-%USERPROFILE%\AppData\Local\Packages\Microsoft.WindowsTerminal*
-%USERPROFILE%\AppData\Local\Packages\Microsoft.WindowsTerminalPreview*
-%USERPROFILE%\. hyper
-%USERPROFILE%\.alacritty
-%USERPROFILE%\.cmder
-
-# WSL
-%USERPROFILE%\. wsl
-%USERPROFILE%\. wslconfig
-%USERPROFILE%\.wslgconfig
-%USERPROFILE%\AppData\Local\Packages\CanonicalGroupLimited*
-%USERPROFILE%\AppData\Local\Packages\*Ubuntu*
-%USERPROFILE%\AppData\Local\Packages\*Debian*
-
-# Docker & Containers
-%USERPROFILE%\. docker
-%USERPROFILE%\.kube
-%USERPROFILE%\.minikube
-%USERPROFILE%\.k9s
-%USERPROFILE%\.helm
-%USERPROFILE%\. rancher
-%USERPROFILE%\.podman
-%USERPROFILE%\.config\containers
-%USERPROFILE%\.docker-compose
-
-# Node.js & JavaScript
-%USERPROFILE%\.npm
-%USERPROFILE%\. node-gyp
-%USERPROFILE%\.nvm
-%USERPROFILE%\.yarn
-%USERPROFILE%\. pnpm
-%USERPROFILE%\.bun
-%USERPROFILE%\. deno
-%USERPROFILE%\Desktop\node_modules
+# Node.js
 %USERPROFILE%\Documents\node_modules
-%USERPROFILE%\. eslintrc
-%USERPROFILE%\.prettierrc
 
-# Python & Data Science
-%USERPROFILE%\.python
-%USERPROFILE%\. pyenv
-%USERPROFILE%\.conda
-%USERPROFILE%\.jupyter
-%USERPROFILE%\.ipython
-%USERPROFILE%\.matplotlib
-%USERPROFILE%\.virtualenvs
-%USERPROFILE%\.venv
-%USERPROFILE%\venv
-%USERPROFILE%\Anaconda3
-%USERPROFILE%\Miniconda3
-%USERPROFILE%\. spyder-py3
-
-# AI & Machine Learning
-%USERPROFILE%\.github-copilot
-%USERPROFILE%\.copilot
-%USERPROFILE%\.openai
-%USERPROFILE%\.chatgpt
-%USERPROFILE%\.gpt
-%USERPROFILE%\.continue
-%USERPROFILE%\. codeium
-%USERPROFILE%\.tabnine
-%USERPROFILE%\.kite
-%USERPROFILE%\.copilot-cli
-%USERPROFILE%\.tensorflow
-%USERPROFILE%\.pytorch
-%USERPROFILE%\.keras
-%USERPROFILE%\.huggingface
-%USERPROFILE%\.transformers
-%USERPROFILE%\.ollama
-%USERPROFILE%\.lm-studio
-%USERPROFILE%\.langchain
-%USERPROFILE%\.llamaindex
-%USERPROFILE%\.streamlit
-%USERPROFILE%\.gradio
-%USERPROFILE%\.wandb
-%USERPROFILE%\.mlflow
-%USERPROFILE%\.azure-ai
-%USERPROFILE%\.cognitive-services
-%USERPROFILE%\.azure-openai
-
-# Package Managers
-%USERPROFILE%\.gradle
-%USERPROFILE%\. maven
-%USERPROFILE%\. m2
-%USERPROFILE%\.cargo
-%USERPROFILE%\.rustup
-%USERPROFILE%\. go
-%USERPROFILE%\. composer
-%USERPROFILE%\.bundle
-%USERPROFILE%\. gem
-%USERPROFILE%\. rvm
-%USERPROFILE%\.rbenv
-
-# Cloud Platforms
-%USERPROFILE%\.aws
-%USERPROFILE%\.awscli
-%USERPROFILE%\.amplify
-%USERPROFILE%\.serverless
-%USERPROFILE%\.config\gcloud
-%USERPROFILE%\.gsutil
-%USERPROFILE%\. heroku
-%USERPROFILE%\.netlify
-%USERPROFILE%\.vercel
-%USERPROFILE%\.railway
-%USERPROFILE%\. fly
-
-# DevOps & CI/CD
-%USERPROFILE%\.jenkins
-%USERPROFILE%\.gitlab-runner
-%USERPROFILE%\.circleci
-%USERPROFILE%\.travis
-%USERPROFILE%\. actions
-%USERPROFILE%\. ansible
-%USERPROFILE%\.vagrant
-
-# Monitoring
-%USERPROFILE%\.grafana
-%USERPROFILE%\.prometheus
-%USERPROFILE%\.datadog
-%USERPROFILE%\.newrelic
-%USERPROFILE%\.splunk
-%USERPROFILE%\.elastic
-
-# API Tools
-%USERPROFILE%\. swagger
-%USERPROFILE%\. openapi
-%USERPROFILE%\.rest-client
-%USERPROFILE%\.httpie
-%USERPROFILE%\.thunderclient
-
-# Mobile Development
-%USERPROFILE%\. android
-%USERPROFILE%\AppData\Local\Android
-%USERPROFILE%\.expo
-%USERPROFILE%\. react-native
-%USERPROFILE%\.flutter
-%USERPROFILE%\.dart
-%USERPROFILE%\. ionic
-
-# Game Development
-%USERPROFILE%\.unity3d
-%USERPROFILE%\.unreal
-%USERPROFILE%\.godot
-
-# Temp & Cache
-%USERPROFILE%\. cache
-%USERPROFILE%\. local
-%USERPROFILE%\.temp
-%USERPROFILE%\. tmp
-%USERPROFILE%\.logs
-
-# Gaming & Misc
+# Gaming
 %USERPROFILE%\Documents\My Games
 %USERPROFILE%\Documents\My Received Files
-%USERPROFILE%\Saved Games
 
-# Desktop Artifacts
+# LPTF Specific
+%USERPROFILE%\Documents\ShareX
+
+# ============================================================
+# DESKTOP FOLDER EXCLUSIONS
+# ============================================================
+
+# Dev Artifacts
+%USERPROFILE%\Desktop\.git
+%USERPROFILE%\Desktop\.vs
 %USERPROFILE%\Desktop\bin
 %USERPROFILE%\Desktop\obj
-%USERPROFILE%\Desktop\.vs
 %USERPROFILE%\Desktop\node_modules
 %USERPROFILE%\Desktop\venv
 %USERPROFILE%\Desktop\.venv
 
-# ShareX (LPTF Specific)
-%USERPROFILE%\Documents\ShareX
+# ============================================================
+# PICTURES FOLDER EXCLUSIONS
+# ============================================================
+
+# (Add any Pictures-specific exclusions here if needed)
