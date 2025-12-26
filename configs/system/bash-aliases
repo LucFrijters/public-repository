@@ -1,0 +1,28 @@
+# Bash Aliases
+# Add to ~/.bashrc or ~/.bash_aliases
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Git shortcuts
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph'
+alias gd='git diff'
+
+# Safety
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Utilities
+alias grep='grep --color=auto'
+alias df='df -h'
+alias du='du -h'
+alias free='free -h'

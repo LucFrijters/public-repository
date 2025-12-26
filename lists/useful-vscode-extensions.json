@@ -1,0 +1,38 @@
+{
+  "language_support": [
+    {
+      "name": "Python",
+      "id": "ms-python.python",
+      "description": "Python language support"
+    },
+    {
+      "name": "JavaScript/TypeScript",
+      "id": "dbaeumer.vscode-eslint",
+      "description": "ESLint integration"
+    }
+  ],
+  "productivity": [
+    {
+      "name": "GitLens",
+      "id": "eamodio.gitlens",
+      "description": "Git supercharged"
+    },
+    {
+      "name": "Prettier",
+      "id": "esbenp.prettier-vscode",
+      "description": "Code formatter"
+    },
+    {
+      "name": "Path Intellisense",
+      "id": "christian-kohler.path-intellisense",
+      "description": "Autocomplete filenames"
+    }
+  ],
+  "themes": [
+    {
+      "name": "One Dark Pro",
+      "id": "zhuangtongfa.Material-theme",
+      "description": "Atom's iconic One Dark theme"
+    }
+  ]
+}
