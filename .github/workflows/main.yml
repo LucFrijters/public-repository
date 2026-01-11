@@ -1,0 +1,4 @@
+- name: SharePoint Mirror Sync
+  uses: MarkusMcNugen/SharePoint-Mirror-Sync@v1.0.0
+
+  
