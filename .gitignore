@@ -1,0 +1,31 @@
+# Sensitive files - DO NOT COMMIT
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+*.jks
+*secrets*
+*password*
+*credentials*
+.env
+.env.*
+*.cert
+
+# Private configurations
+*private*
+*local*
+*.local
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
